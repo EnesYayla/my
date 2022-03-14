@@ -1,0 +1,33 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+  <div >
+    <label for="filterText" class="form-label">Search Palette</label>
+    <input [(ngModel)]="filterText" type="text" class="form-control" id="filterText" placeholder="Search Somethin?">
+  </div>
+  <br>
+  <div *ngIf="filterText.length>1" class="alert alert-warning">{{filterText}} aradınız</div>
+  
+
+  <table *ngIf="dataLoaded==true" class="table">
+<table  class="table">
+    <thead>
+      <tr>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Bigger</th>
+        <th>Cost</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let todo of todos | filterPipe:filterText" >
+      <td>{{ todo.userId }}</td>
+      <td>{{ todo.id }}</td>
+      <td>{{ todo.title  }}</td>
+      <td>{{ todo.title | uppercase}}</td>
+      <td>{{ todo.id | vatAdded:18 | currency}}</td>
+      <td>{{ todo.completed }}</td>
+    </tr>
+  </table>

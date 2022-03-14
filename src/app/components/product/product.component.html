@@ -1,0 +1,25 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-warning" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<div >
+  <label for="filterText" class="form-label">Search Palette</label>
+  <input type="text" class="form-control" id="filterText" placeholder="Search Somethin?">
+</div>
+
+<table *ngIf="dataLoaded==true" class="table">
+  <thead>
+    <tr>
+      <th>User Id</th>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Completed</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let product of products">
+    <td>{{ product.userId }}</td>
+    <td>{{ product.id }}</td>
+    <td>{{ product.title | uppercase }}</td>
+    <td>{{ product.completed }}</td>
+  </tr>
+</table>
