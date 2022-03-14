@@ -25,7 +25,7 @@
     <tr *ngFor="let todo of todos | filterPipe:filterText" >
       <td>{{ todo.userId }}</td>
       <td>{{ todo.id }}</td>
-      <td>{{ todo.title | uppercase }}</td>
+      <td>{{ todo.title }}</td>
       <td>{{ todo.title | uppercase}}</td>
       <td>{{ todo.id | vatAdded:18 | currency}}</td>
       <td>{{ todo.completed }}</td>
