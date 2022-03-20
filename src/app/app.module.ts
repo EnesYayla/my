@@ -11,6 +11,10 @@ import { NaviComponent } from './components/navi/navi.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { LoginComponent } from './components/login/login.component';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { CartAddedComponent } from './components/cart-added/cart-added.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     TodoComponent,
     VatAddedPipe,
     FilterPipePipe,
+    LoginComponent,
+    CartSummaryComponent,
+    CartAddedComponent
+    
     
   ],
   imports: [
@@ -28,6 +36,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

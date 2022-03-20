@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <img [src]="siteImage" height="100%" width="100%">
+        </div>
+        <div class="col-md-4 mt-3 mb-2">
+          <h6 class="text-success text-center">
+            <img  [src]="logo" height="50" width="50">
+          </h6>
+          <h3 class="text-success text-center"><b>KANTİN</b></h3>
+            <form action="" class="mt-5 p-5">
+                <h5 class="text-primary mb-3" >Giriş Yap</h5>
+                <div class="form-floating mb-3 ">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Eposta" name="email" [(ngModel)]="email">
+                    <label for="floatingInput">Eposta</label>
+                </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="şifre" name="password" [(ngModel)]="password">
+                    <label for="floatingPassword">Şifre</label>
+                  </div>
+                  
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-outline-success me-md-2" type="button" (click)="login()" >Giriş Yap</button>
+                  </div>
+
+                  <a routerLink="/signup" class="text-primary" style="text-decoration: none;">Hesabın yok mu?</a>
+            </form>
+
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+</div>

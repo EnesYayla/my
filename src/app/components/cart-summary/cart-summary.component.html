@@ -1,0 +1,8 @@
+<li *ngIf="cartItems.length>0" class="nav-item">
+  <a class="nav-link">Sepetiniz</a>
+</li>
+<li *ngFor="let cartItem of cartItems" class="nav-item">
+  <a><span class="badge  bg-secondary">{{cartItem.quantity}}</span>
+      {{ cartItem.todo.title }}
+      <span class="badge  bg-secondary" (click)="removeFromCart(cartItem.todo)">Sil</span></a>
+</li>
