@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { CartAddedComponent } from './components/cart-added/cart-added.component';
+import { TodoAddComponent } from './components/todo-add/todo-add.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { CartAddedComponent } from './components/cart-added/cart-added.component
     FilterPipePipe,
     LoginComponent,
     CartSummaryComponent,
-    CartAddedComponent
+    CartAddedComponent,
+    TodoAddComponent,
+    ProductAddComponent
     
     
   ],
@@ -36,8 +40,7 @@ import { CartAddedComponent } from './components/cart-added/cart-added.component
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    
-    
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
