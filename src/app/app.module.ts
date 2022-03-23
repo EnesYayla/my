@@ -16,6 +16,7 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
 import { CartAddedComponent } from './components/cart-added/cart-added.component';
 import { TodoAddComponent } from './components/todo-add/todo-add.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { LogginComponent } from './components/loggin/loggin.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     CartSummaryComponent,
     CartAddedComponent,
     TodoAddComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    LogginComponent
     
     
   ],
