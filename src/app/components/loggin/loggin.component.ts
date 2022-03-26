@@ -31,8 +31,13 @@ export class LogginComponent implements OnInit {
       console.log(this.loginForm.value);
       let loginModel = Object.assign({}, this.loginForm.value);
 
-      this.authService.login(loginModel).subscribe(data=>{
-        console.log(data);
+      this.authService.login(loginModel).subscribe(response=>{
+        console.log(response.message);
+        console.log(response);
+        localStorage.setItem("token",response.data.token);
+      }, responseError=>{
+        console.log(responseError)
+
       })
     }
   }

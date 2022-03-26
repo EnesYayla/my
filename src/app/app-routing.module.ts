@@ -5,6 +5,7 @@ import { LogginComponent } from './components/loggin/loggin.component';
 import { LoginComponent } from './components/login/login.component';
 import { TodoAddComponent } from './components/todo-add/todo-add.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: TodoComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'users', component: CategoryComponent },
   { path: 'products/category/:id', component: TodoComponent },
   { path: 'login', component: LoginComponent},
-  { path: 'todos/add', component:TodoAddComponent},
+  { path: 'todos/add', component:TodoAddComponent, canActivate:[LoginGuard]},
+  //Backend'de belirtilen eposta ve şifreyi girmeden ürün eklemeni engelliyor
   { path: 'loggin', component:LogginComponent},
 ];
 

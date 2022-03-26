@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { CartAddedComponent } from './components/cart-added/cart-added.component
 import { TodoAddComponent } from './components/todo-add/todo-add.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
 import { LogginComponent } from './components/loggin/loggin.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 @NgModule({
@@ -44,7 +45,9 @@ import { LogginComponent } from './components/loggin/loggin.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true} //global injection/ yüm servisler için enjekte
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

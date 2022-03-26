@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginModel } from '../models/loginModel';
-import { ResponseModel } from '../models/responseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 
 @Injectable({
@@ -9,12 +9,12 @@ import { TokenModel } from '../models/tokenModel';
 })
 export class AuthService {
 
-  realApiUrl = 'https://localhost:44314/api/auth';
-  apiUrl = 'https://jsonplaceholder.typicode.com/users';
+  realApiUrl = 'https://localhost:44314/api/auth'; //Gerçek Database için api
+  apiUrl = 'https://jsonplaceholder.typicode.com/users'; //zorunlu fake Rest api
   constructor(private httpClient:HttpClient) { }
 
   login(loginModel:LoginModel){
-    return this.httpClient.post<ResponseModel<TokenModel>>(this.apiUrl+"loggin",loginModel)
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl+"loggin",loginModel)
     
   }
 
